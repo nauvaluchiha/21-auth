@@ -17,7 +17,12 @@ export function Header() {
     if (menu) {
       menu.classList.toggle("hidden");
       html.addEventListener("click", (e) => {
-        if (e.target !== button && !button.contains(e.target as Node)) {
+        if (
+          e.target !== button &&
+          !button.contains(e.target as Node) &&
+          e.target !== menu &&
+          !menu.contains(e.target as Node)
+        ) {
           menu.classList.add("hidden");
         }
       });
@@ -29,8 +34,8 @@ export function Header() {
       <nav className="bg-white border-gray-200 dark:bg-gray-900 relative">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="flex items-center">
-            <span className="self-center text-2xl leading-7 pb-2 font-semibold whitespace-nowrap dark:text-white">
-              Simple Header
+            <span className="self-center text-2xl leading-7 pb-2 font-semibold whitespace-nowrap text-emerald-500">
+              Tokopaedi
             </span>
           </Link>
           <Button
