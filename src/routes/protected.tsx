@@ -6,5 +6,5 @@ export default function ProtectedRoute() {
     <Toaster />;
     return <Outlet />;
   }
-  return <Navigate to="/" />;
+  return <Navigate to="/" replace />;
 }

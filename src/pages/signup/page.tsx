@@ -41,7 +41,7 @@ export default function Page() {
       title: "Sign Up Success",
       description: "Your account has been created",
       className: "border-teal-500 text-teal-500",
-      duration: 1800,
+      duration: 4000,
     });
   };
 

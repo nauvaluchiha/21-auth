@@ -1,3 +1,4 @@
+import Cookie from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { Main } from "@/components/main";
 import { Input } from "@/components/ui/input";
@@ -7,7 +8,6 @@ import { useForm } from "react-hook-form";
 import { FormValues, formSchema } from "@/validators/auht";
 import { useDispatch } from "react-redux";
 import { login } from "@/stores/auth";
-import Cookie from "js-cookie";
 import { v4 as token } from "uuid";
 import { useToast } from "@/components/ui/use-toast";
 import { Toaster } from "@/components/ui/toaster";
@@ -38,6 +38,16 @@ export default function Page() {
 
   const allUserData = Cookie.get();
   const onSubmit = (values: FormValues) => {
+    if (Object.keys(allUserData).length === 0) {
+      toast({
+        title: "Login Failed",
+        description: "You haven't create account yet",
+        className: "border-red-500 text-red-500",
+        duration: 2000,
+      });
+      return;
+    }
+
     let foundData = false;
     for (const key in allUserData) {
       if (key.startsWith("email") && allUserData[key] === values.email) {
@@ -48,17 +58,11 @@ export default function Page() {
         }
       }
     }
+    console.log("tes");
     if (foundData) {
       dispatch(login());
       Cookie.set("token", token());
       navigate("/products");
-    } else if (Object.keys(allUserData).length === 0) {
-      toast({
-        title: "Login Failed",
-        description: "You haven't create account yet",
-        className: "border-red-500 text-red-500",
-        duration: 2000,
-      });
     } else if (!foundData) {
       toast({
         title: "Login Failed",

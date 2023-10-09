@@ -30,7 +30,7 @@ export function Header() {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="flex items-center">
             <span className="self-center text-2xl leading-7 pb-2 font-semibold whitespace-nowrap dark:text-white">
-              Simple Header 
+              Simple Header
             </span>
           </Link>
           <Button
@@ -78,7 +78,7 @@ export function Header() {
               <li>
                 <Link
                   to="/products"
-                  className="block text-center py-2 pl-3 pr-3 text-gray-500 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-400 lg:px-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent w-full hover:underline"
+                  className="block text-center py-2 pl-3 pr-3 text-gray-600 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-opacity-80 lg:px-0 w-full hover:underline"
                 >
                   Products
                 </Link>
@@ -86,7 +86,7 @@ export function Header() {
               <li>
                 <Link
                   to=""
-                  className="block text-center py-2 pl-3 pr-3 text-gray-500 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-400 lg:px-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent cursor-default w-full"
+                  className="block text-center py-2 pl-3 pr-3 text-gray-600 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-opacity-80 lg:px-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent cursor-default w-full"
                   onClick={(e) => e.preventDefault()}
                 >
                   Features
@@ -95,7 +95,7 @@ export function Header() {
               <li>
                 <Link
                   to=""
-                  className="block text-center py-2 pl-3 pr-3 text-gray-500 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-400 lg:px-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent cursor-default w-full"
+                  className="block text-center py-2 pl-3 pr-3 text-gray-600 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-opacity-80 lg:px-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent cursor-default w-full"
                   onClick={(e) => e.preventDefault()}
                 >
                   Pricing
@@ -104,7 +104,7 @@ export function Header() {
               <li>
                 <Link
                   to=""
-                  className="block text-center py-2 pl-3 pr-3 text-gray-500 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-400 lg:px-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent cursor-default w-full"
+                  className="block text-center py-2 pl-3 pr-3 text-gray-600 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-opacity-80 lg:px-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent cursor-default w-full"
                   onClick={(e) => e.preventDefault()}
                 >
                   FAQs
@@ -113,7 +113,7 @@ export function Header() {
               <li>
                 <Link
                   to=""
-                  className="block text-center py-2 pl-3 pr-3 text-gray-500 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-400 lg:px-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent cursor-default w-full"
+                  className="block text-center py-2 pl-3 pr-3 text-gray-600 font-semibold rounded lg:hover:bg-transparent lg:border-0 lg:hover:text-opacity-80 lg:px-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent cursor-default w-full"
                   onClick={(e) => e.preventDefault()}
                 >
                   About
