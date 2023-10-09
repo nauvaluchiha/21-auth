@@ -111,9 +111,9 @@ export default function Page() {
                     name="email"
                     render={({ field }) => (
                       <FormItem className="space-y-1">
-                        <FormLabel>Username</FormLabel>
+                        <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="shadcn" {...field} />
+                          <Input type="email" placeholder="email" {...field} />
                         </FormControl>
                         <FormMessage className="absolute" />
                       </FormItem>
@@ -128,7 +128,7 @@ export default function Page() {
                           <FormLabel>Password</FormLabel>
                           <ShowPassword />
                           <FormControl>
-                            <Input id="password" type="password" placeholder="shadcn" {...field} />
+                            <Input id="password" type="password" placeholder="password" {...field} />
                           </FormControl>
                           <FormMessage className="absolute mt-1" />
                         </div>
