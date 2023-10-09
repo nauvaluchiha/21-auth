@@ -1,0 +1,39 @@
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { v4 as uuidv4 } from "uuid";
+
+const MAX_IMAGE_SIZE = 5242880; // 5 MB
+const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
+
+export const formSchema = z.object({
+  id: z.string().uuid().optional(),
+  no: z.number().int().positive(),
+  name: z
+    .string()
+    .min(3, { message: "Product Name should have at least 3 character" })
+    .max(25)
+    .refine((val) => /^[\w\s]+$/.test(val), {
+      message: "Only letters, numbers, and spaces are allowed.",
+    }),
+  category: z.string().min(3).max(50),
+  image: z
+    .custom<FileList>((val) => val instanceof FileList, "Required")
+    .refine((files) => files.length > 0, `Required`)
+    .refine((files) => files.length <= 5, `Maximum of 5 images are allowed.`)
+    .refine(
+      (files) => Array.from(files).every((file) => file.size <= MAX_IMAGE_SIZE),
+      `Each file size should be less than 5 MB.`
+    )
+    .refine(
+      (files) => Array.from(files).every((file) => ALLOWED_IMAGE_TYPES.includes(file.type)),
+      "Only these types are allowed .jpg, .jpeg, .png and .webp"
+    ),
+  freshness: z.enum(["new", "second", "refurbished"], {
+    required_error: "You need to select a notification type.",
+  }),
+  desc: z.string().min(3).max(150),
+  price: z.string().min(1, { message: "price must be have a value(s)" }).max(8),
+});
+
+export type FormValues = z.infer<typeof formSchema>;
