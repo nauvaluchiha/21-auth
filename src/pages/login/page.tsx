@@ -74,20 +74,21 @@ export default function Page() {
   };
 
   return (
-    <Main className="relative h-[calc(100vh-28px-1.75rem-1.1rem)]">
+    <section>
       <Toaster />
-      {/* {showAlert && (
+      <Main className="relative h-[calc(100vh-28px-1.75rem-1.1rem)]">
+        {/* {showAlert && (
         <Alert variant="destructive" className="w-fit mx-auto px-4 py-1 mt-0 min-[435px]:p-4">
           <AlertTitle>login Failed</AlertTitle>
           <AlertDescription>
             You may haven't create account yet or your data is wrong
           </AlertDescription>
-        </Alert>
+          </Alert>
       )} */}
-      <div className="max-w-[435px] w-full absolute -translate-x-1/2 -translate-y-1/2 top-[45%] left-1/2">
-        <div className="px-4">
-          <div className="flex mb-2 bg-slate-500 p-2 rounded-md justify-between">
-            {/* <Button className="rounded-none w-[50%] bg-slate-400 hover:bg-opacity-100">
+        <div className="max-w-[435px] w-full absolute -translate-x-1/2 -translate-y-1/2 top-[43%] left-1/2">
+          <div className="px-4">
+            <div className="flex mb-2 bg-slate-500 p-2 rounded-md justify-between">
+              {/* <Button className="rounded-none w-[50%] bg-slate-400 hover:bg-opacity-100">
               Login
             </Button>
             <Button
@@ -98,54 +99,60 @@ export default function Page() {
             >
               Sign Up
             </Button> */}
-            <div className="w-full h-8 cursor-default">
-              <h1 className="text-xl text-center text-white">Login</h1>
+              <div className="w-full h-8 cursor-default">
+                <h1 className="text-xl text-center text-white">Login</h1>
+              </div>
             </div>
-          </div>
-          <Card className="min-h-[300px]">
-            <CardContent className="mt-5">
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem className="space-y-1">
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="email" {...field} />
-                        </FormControl>
-                        <FormMessage className="absolute" />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="password"
-                    render={({ field }) => (
-                      <FormItem className="space-y-0">
-                        <div>
-                          <FormLabel>Password</FormLabel>
-                          <ShowPassword />
+            <Card className="min-h-[300px]">
+              <CardContent className="mt-5">
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem className="space-y-1">
+                          <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input id="password" type="password" placeholder="password" {...field} />
+                            <Input type="email" placeholder="email" {...field} />
                           </FormControl>
-                          <FormMessage className="absolute mt-1" />
-                        </div>
-                      </FormItem>
-                    )}
-                  />
-                  <div>
-                    <Button className="w-full bg-slate-700 mt-4" type="submit">
-                      Submit
-                    </Button>
-                  </div>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
+                          <FormMessage className="absolute" />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="password"
+                      render={({ field }) => (
+                        <FormItem className="space-y-0">
+                          <div>
+                            <FormLabel>Password</FormLabel>
+                            <ShowPassword />
+                            <FormControl>
+                              <Input
+                                id="password"
+                                type="password"
+                                placeholder="password"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage className="absolute mt-1" />
+                          </div>
+                        </FormItem>
+                      )}
+                    />
+                    <div>
+                      <Button className="w-full bg-slate-700 mt-4" type="submit">
+                        Submit
+                      </Button>
+                    </div>
+                  </form>
+                </Form>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-      </div>
-    </Main>
+      </Main>
+    </section>
   );
 }
